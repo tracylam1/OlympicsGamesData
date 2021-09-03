@@ -54,12 +54,20 @@ where season = 'Winter' and (medal = 'Gold' or medal = 'Silver' or medal = 'Bron
 group by NOC
 order by TotalMedals desc
 
+select NOC, medal
+from portfolio..athleteevents
+where season = 'Winter' and (medal = 'Gold' or medal = 'Silver' or medal = 'Bronze')
+
 -- total medals by each athlete and their NOC
 select athlete, NOC, count(medal) as TotalMedals
 from portfolio..athleteevents
 where season = 'Winter' and (medal = 'Gold' or medal = 'Silver' or medal = 'Bronze')
 group by athlete, NOC
 order by TotalMedals desc
+
+select athlete, medal
+from portfolio..athleteevents
+where season = 'Winter' and (medal = 'Gold' or medal = 'Silver' or medal = 'Bronze')
 
 -- total medals by each NOC by years
 select NOC, year, count(medal) as TotalMedals
